@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pocasi</title>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body class="bg">
+
+    <!-- time, search and location information -->
+    <div class="info flex">
+
+        <!-- more accurate info about current day -->
+        <div class="clock">
+            <div class="time">00:00</div>
+            <div class="date">Monday, 1, Jan</div>
+        </div>
+
+        <!-- city input -->
+        <div class="flex itemCenter input">
+            <form action="#" onsubmit="getData">
+                <input type="text", value="Brno", placeholder="Enter a city", class="inputValue">
+                <input type="submit", value="Submit", onclick="getData()",    class="button">
+            </form>
+        </div>
+
+        <!-- city location and name -->
+        <div class="place itemCenter">
+            <div class="city">City</div>
+            <div class="timezone">Timezone</div>
+            <div class="coords">Lat Lon</div>
+        </div>
+    </div>
+
+    <!-- more detailed description of current day -->
+    <div class="currentDay-info ">
+        <div class="currentDay-item flex">
+            <span>Humidity</span>
+            <span class="humidity">0%</span>
+        </div>
+        <div class="currentDay-item flex">
+            <span>Pressure</span>
+            <span class="pressure">0</span>
+        </div>
+        <div class="currentDay-item flex">
+            <span>Wind Speed</span>
+            <span class="windspeed">0.00 m/s</span>
+        </div>
+        <div class="currentDay-item flex">
+            <span>Sunrise</span>
+            <span class="sunrise">00:00</span>
+        </div>
+        <div class="currentDay-item flex">
+            <span>Sunset</span>
+            <span class="sunset">00:00</span>
+        </div>
+    </div>
+
+    <!-- container for currrent and future days -->
+    <div class="future-forecast flex itemCenter">
+        <!-- days are added with JS -->
+    </div>
+
+</body>

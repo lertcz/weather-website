@@ -1,0 +1,174 @@
+/* make container flex */
+.flex {
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+}
+
+/* ------ center items in flex container ------ */
+.itemCenter {
+    justify-content: center;
+    align-items: center;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("Images/background.jpg");
+  
+    /* Full height and set it a bit down*/
+    height: 125vh;
+
+    /* Set the image to cover the whole page with no repeats */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden
+}
+
+
+/* ------ search section ------ */
+.input {
+    margin: auto;
+}
+
+/* input field */
+input[type=text] {
+    background-color: white;
+    background-image: url('./Images/search.png');
+    background-size: 25px;
+    background-position: 6px 2px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    height: 25px;
+
+    border-radius: 25px;
+}
+
+/* submit button */
+input[type=submit] {
+    border-radius: 25px;
+}
+
+/* ------ info section ------ */
+/* info div */
+.info {
+    margin: 5%;
+}
+
+/* real time date div */
+.clock {
+    /* border */
+    color: white;
+    padding: 20px;
+    width: 200px    ;
+    height: auto;
+}
+
+.time {
+    font-size: 70px;
+}
+
+.date {
+    font-size: 25px;
+}
+
+/* info about the city and it's location */
+.place {
+    /* border */
+    border-radius: 25px;
+    border: 3px solid white;
+    background: rgba(0, 0, 0, .2);
+
+    color: white;
+    padding: 20px;
+    width: 150px;
+    height: 60px;
+    
+    flex-direction: column;
+}
+
+.city {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.timezone {
+    font-size: 19px;
+}
+
+/* ------ specific information about this day ------ */
+.currentDay-info {
+    flex-direction: column;
+    border-radius: 25px;
+    border: 3px solid white;
+    background: rgba(0, 0, 0, .4);
+    width: 10%;
+    min-width: 250px;
+    margin: 5%;
+
+
+    color: white;
+    font-size: 20px;
+}
+
+.currentDay-item {
+    justify-content: space-between;
+    /* top right bottom left */
+    margin: 10px;
+    padding: 0px 10px 0px 10px;
+}
+
+/* ------ weathe forecast ------ */
+/* the background */
+.future-forecast {
+    flex-direction: row;
+    /* allow scrolling */
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: fixed;
+    background: rgba(0, 0, 0, .6);
+    color: white;
+
+    /* position and size */
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 220px;
+}
+
+.currentDay-container {
+    flex-direction: column;
+    border-radius: 25px;
+    border: 3px solid white;
+    background: rgba(0, 0, 0, .4);
+    width: 10%;
+    min-width: 250px;
+    margin: 2%;
+
+
+    color: white;
+}
+
+
+.futureDays-container {
+    flex-direction: column;
+    min-height: min-content;
+    margin: 5px;
+
+    /* frame */
+    border-radius: 25px;
+    border: 3px solid white;
+    background: rgba(0, 0, 0, .4);
+    padding: 20px;
+    width: 100px;
+    height: 150px;
+}
+
+/* day tag in future days */
+.day {
+    background: #808080; //gray
+    color: white;
+    border-radius: 25px;
+    padding: 5px 15px 5px 15px;
+}
