@@ -20,8 +20,8 @@ setInterval(() => {
 
     /* current time */
     const time = new Date()
-    const hour = time.getHours()
-    const minutes = time.getMinutes()
+    const hour = String(time.getHours()).padStart(2, "0")
+    const minutes = String(time.getMinutes()).padStart(2, "0")
 
     clock.innerHTML = hour + ":"+ minutes
 
