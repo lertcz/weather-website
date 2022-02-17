@@ -43,8 +43,8 @@ function currentCityData(data) {
     let sunset = document.querySelector(".sunset")
 
     humidity.innerHTML = data["main"]["humidity"] + "%"
-    pressure.innerHTML = data["main"]["pressure"] + "hPa"
-    windSpeed.innerHTML = data["wind"]["speed"] + "m/s"
+    pressure.innerHTML = data["main"]["pressure"] + " hPa"
+    windSpeed.innerHTML = data["wind"]["speed"] + " m/s"
     
     // create new time variable and passing it date in seconds 
     let time = new Date(0) // Epoch
