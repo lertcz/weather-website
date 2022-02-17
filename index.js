@@ -62,7 +62,7 @@ function currentCityData(data) {
 
     // create current day
     let currentDay = document.createElement('div')
-    currentDay.className = "currentDay-container flex itemCenter frame"
+    currentDay.className = "currentDay-container flex itemCenter"
     let img = "http://openweathermap.org/img/wn/" + data["weather"]["0"]["icon"] + "@2x.png"
     let tempC = String(Math.round(data["main"]["temp"] - 273.15)) + String(" °C")
 
@@ -101,7 +101,7 @@ function futureForecast(coord) { // add future days
                 let nightTempC = String(Math.round(currentDay["temp"]["night"] - 273.15)) + " °C"
 
                 var futureDay = document.createElement('div')
-                futureDay.className = "futureDays-container flex itemCenter frame"
+                futureDay.className = "futureDays-container flex itemCenter"
                 futureDay.innerHTML = '<div class="day">' + SHORTDAYS[date.getDay()] + '</div>'
                 + '<img class="futureImg", src="http://openweathermap.org/img/wn/' + currentDay["weather"]["0"]["icon"] + '@2x.png", alt="future img">'
                 + '<div class="temp">Day - ' + dayTempC + '</div>'
