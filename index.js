@@ -117,7 +117,7 @@ function futureForecast(coord) { // add future days
 function getData() {
     var inputValue = document.querySelector(".inputValue")
 
-    url = "http://api.openweathermap.org/data/2.5/weather?q=" + inputValue.value + "&appid=" + key
+    url = "https://api.openweathermap.org/data/2.5/weather?q=" + inputValue.value + "&appid=" + key
     console.log(url)
 
     fetch(url)
