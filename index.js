@@ -11,9 +11,8 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 //future forecast
 // https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=hourly,minutely&appid={API key}
 
-// open weather img
-// <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
 
+// clock
 setInterval(() => {
     let clock = document.querySelector(".time")
     let date = document.querySelector(".date")
@@ -57,6 +56,7 @@ function currentCityData(data) {
 
 
     let city = document.querySelector(".city")
+
     //reset future-forecast content
     document.querySelector(".future-forecast").innerHTML = ""
 
@@ -71,11 +71,13 @@ function currentCityData(data) {
     + '<div class="desc">' + data["weather"]["0"]["description"] + '</div>'
     + '<div class="temp">' + tempC                               + '</div>'
 
+    // append current day square
     document.querySelector(".future-forecast").appendChild(currentDay)
 
     city.innerHTML = data["name"]
 
-    return [data["coord"]["lat"], data["coord"]["lon"]]
+    // get the future forecast
+    futureForecast([data["coord"]["lat"], data["coord"]["lon"]])
 }
 
 function futureForecast(coord) { // add future days
@@ -89,10 +91,12 @@ function futureForecast(coord) { // add future days
         .then(data => {
             console.log(data)
 
+            // set city details
             timezone.innerHTML = data["timezone"] 
             coords.innerHTML = String(coord[0]) + "N " + String(coord[1]) + "E"
 
             for(let i = 1; i < 8; i++) {
+                // create data
                 let currentDay = data["daily"][i]
                 let date = new Date(0)
                 date.setUTCSeconds(currentDay["dt"])
@@ -107,13 +111,14 @@ function futureForecast(coord) { // add future days
                 + '<div class="temp">Day - ' + dayTempC + '</div>'
                 + '<div class="temp">Night - ' + nightTempC + '</div>'
             
-            
+                // append future day
                 document.querySelector(".future-forecast").appendChild(futureDay)
             }
         })
     .catch(err => console.error('EXCEPTION: ', err))
 }
 
+// fetch data from the api
 function getData() {
     var inputValue = document.querySelector(".inputValue")
 
@@ -123,15 +128,16 @@ function getData() {
     fetch(url)
         .then(response => response.json())
         .then(data => {
+            // if data is found
             if (data["cod"] !== 404) {
                 console.log(data)
 
-                futureForecast(currentCityData(data))
+                currentCityData(data)
             }
             else {
                 alert("Wrong city name!")
             }
 
         })
-    .catch(err => console.error('EXCEPTION: ', err))
+    .catch(err => console.error('ERROR: ', err))
 }
