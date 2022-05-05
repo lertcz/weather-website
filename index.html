@@ -26,15 +26,15 @@
         </div>
 
         <!-- city input -->
-        <div class="flex itemCenter input">
-            <form action="#" onsubmit="getData">
+        <div class="flex input">
+            <form action="#" onsubmit="getData; return false">
                 <input type="text", value="Brno", placeholder="Enter a city", class="inputValue">
                 <input type="submit", value="Submit", onclick="getData()",    class="button">
             </form>
         </div>
 
         <!-- city location and name -->
-        <div class="place itemCenter">
+        <div class="place">
             <div class="city">City</div>
             <div class="timezone">Timezone</div>
             <div class="coords">Lat Lon</div>
@@ -66,7 +66,7 @@
     </div>
 
     <!-- container for currrent and future days -->
-    <div class="future-forecast flex itemCenter">
+    <div class="future-forecast flex">
         <!-- days are added with JS -->
     </div>
 

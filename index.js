@@ -66,7 +66,7 @@ function currentCityData(data) {
     let img = "http://openweathermap.org/img/wn/" + data["weather"]["0"]["icon"] + "@2x.png"
     let tempC = String(Math.round(data["main"]["temp"] - 273.15)) + String(" °C")
 
-    currentDay.innerHTML = '<img class="currentImg", src=' + img + ' , alt="weather icon">'
+    currentDay.innerHTML = '<img class="currentImg", width=100, src=' + img + ' , alt="weather icon">' /* ! size */
     + '<div class="weather">' + data["weather"]["0"]["main"]     + '</div>'
     + '<div class="desc">' + data["weather"]["0"]["description"] + '</div>'
     + '<div class="temp">' + tempC                               + '</div>'
