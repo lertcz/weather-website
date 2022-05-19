@@ -23,6 +23,7 @@
         <div class="clock">
             <div class="time">00:00</div>
             <div class="date">Monday, 1 Jan</div>
+            <a href="./contact.php">KONTAKT</a>
         </div>
 
         <!-- city input -->
@@ -42,7 +43,13 @@
     </div>
 
     <!-- more detailed description of current day -->
-    <div class="currentDay-info ">
+    <div class="currentDay-info flex">
+        <div class="MainWeatherIcon currentDay-item flex"></div> <!-- will be fileld after search -->
+        <div class="currentDay-item flex">
+            <span>Temperature</span>
+            <span class="temp">0 °C</span>
+        </div>
+        <hr style="width: 80%;">
         <div class="currentDay-item flex">
             <span>Humidity</span>
             <span class="humidity">0%</span>

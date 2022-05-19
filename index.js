@@ -41,6 +41,9 @@ function currentCityData(data) {
     let sunrise = document.querySelector(".sunrise")
     let sunset = document.querySelector(".sunset")
 
+    let icon = document.querySelector(".MainWeatherIcon")
+    let temp = document.querySelector(".temp")
+
     humidity.innerHTML = data["main"]["humidity"] + "%"
     pressure.innerHTML = data["main"]["pressure"] + " hPa"
     windSpeed.innerHTML = data["wind"]["speed"] + " m/s"
@@ -61,21 +64,26 @@ function currentCityData(data) {
     document.querySelector(".future-forecast").innerHTML = ""
 
     // create current day
-    let currentDay = document.createElement('div')
-    currentDay.className = "currentDay-container flex itemCenter"
+    /* let currentDay = document.createElement('div')
+    currentDay.className = "currentDay-container flex"
     let img = "http://openweathermap.org/img/wn/" + data["weather"]["0"]["icon"] + "@2x.png"
     let tempC = String(Math.round(data["main"]["temp"] - 273.15)) + String(" °C")
-
-    currentDay.innerHTML = '<img class="currentImg", width=100, src=' + img + ' , alt="weather icon">' /* ! size */
+    
+    currentDay.innerHTML = '<img class="currentImg", width=100, src=' + img + ' , alt="weather icon">'
     + '<div class="weather">' + data["weather"]["0"]["main"]     + '</div>'
     + '<div class="desc">' + data["weather"]["0"]["description"] + '</div>'
     + '<div class="temp">' + tempC                               + '</div>'
-
+    
     // append current day square
-    document.querySelector(".future-forecast").appendChild(currentDay)
+    document.querySelector(".future-forecast").appendChild(currentDay) */
+    
+    let img = "http://openweathermap.org/img/wn/" + data["weather"]["0"]["icon"] + "@2x.png"
+    icon.innerHTML = '<span><img class="currentImg", width=100, src=' + img + ' , alt="weather icon"></span>' +
+                    '<span style="margin: auto;">' + data["weather"]["0"]["description"] + '</span>'
 
+    temp.innerHTML = String(Math.round(data["main"]["temp"] - 273.15)) + String(" °C")
+    
     city.innerHTML = data["name"]
-
     // get the future forecast
     futureForecast([data["coord"]["lat"], data["coord"]["lon"]])
 }
