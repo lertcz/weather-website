@@ -20,15 +20,14 @@
     <div class="info flex">
 
         <!-- more accurate info about current day -->
-        <div class="clock">
+        <div class="clock colapseMargin">
             <div class="time">00:00</div>
             <div class="date">Monday, 1 Jan</div>
-            <a href="/contact.html">KONTAKT HTML</a>
-            <a href="/contact.php">KONTAKT PHP</a>
+            <!-- <a href="https://lertcz.github.io/weather-website/contact.html">KONTAKT HTML</a> -->
         </div>
 
         <!-- city input -->
-        <div class="flex input">
+        <div class="flex input colapseMargin">
             <form action="#" onsubmit="getData; return false">
                 <input type="text", value="Brno", placeholder="Enter a city", class="inputValue">
                 <input type="submit", value="Submit", onclick="getData()",    class="button">
@@ -36,7 +35,7 @@
         </div>
 
         <!-- city location and name -->
-        <div class="place">
+        <div class="place colapseMargin">
             <div class="city">City</div>
             <div class="timezone">Timezone</div>
             <div class="coords">Lat Lon</div>
@@ -44,7 +43,7 @@
     </div>
 
     <!-- more detailed description of current day -->
-    <div class="currentDay-info flex">
+    <div class="currentDay-info">
         <div class="MainWeatherIcon currentDay-item flex"></div> <!-- will be fileld after search -->
         <div class="currentDay-item flex">
             <span>Temperature</span>
